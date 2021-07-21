@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+@import "./nullstyles";
+@import "./colors";
+@import "./variables";
+
+//Components
+@import "../Components/Header/header";
+@import "../Components/Selectors/selectors";
+@import "../Components/Countries/countryCard";
+@import "../Components/Pages/CountryDetailsPage/detailsPage";
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  @include themed() {
+    background: t("background");
+  }
+}
+.container {
+  max-width: 1300px;
+  padding: 0 20px;
+  margin: 0 auto;
+}

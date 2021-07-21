@@ -1,0 +1,32 @@
+.header {
+  padding: 20px 0;
+  box-shadow: 5px 5px 10px -10px rgba(34, 60, 80, 0.45);
+  @media (max-width: $md3) {
+    font-size: 0.65rem;
+  }
+  @include themed() {
+    background: t("primary");
+    color: t("text");
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // .header__logo
+  &__logo {
+    font-weight: 800;
+  }
+
+  // .header__theme-switch
+  &__theme-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    // .header__theme-switch_title
+    &_title {
+      margin-left: 15px;
+      font-weight: 600;
+    }
+  }
+}

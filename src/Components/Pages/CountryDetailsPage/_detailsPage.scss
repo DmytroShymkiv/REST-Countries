@@ -1,0 +1,127 @@
+.go-back {
+  box-shadow: $shadow;
+  margin: 50px 0;
+  @include themed() {
+    background: t("primary");
+    color: t("input");
+  }
+  padding: 10px 30px;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  .fas {
+    margin-right: 10px;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $md1) {
+    flex-direction: column;
+  }
+  .flag {
+    box-shadow: $cardShadow;
+    width: 45%;
+    object-fit: cover;
+    @media (max-width: $md1) {
+      width: 70%;
+    }
+    @media (max-width: $md2) {
+      width: 80%;
+    }
+    @media (max-width: $md3) {
+      width: 100%;
+    }
+  }
+}
+.details {
+  width: 47%;
+  @media (max-width: $md1) {
+    margin-top: 40px;
+    width: 70%;
+  }
+  @media (max-width: $md2) {
+    width: 80%;
+  }
+  @media (max-width: $md3) {
+    width: 100%;
+  }
+  @include themed() {
+    color: t("text");
+  }
+  //.details-title
+  &-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  //.details-stats
+  &-stats {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $md2) {
+      flex-direction: column;
+    }
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    //.details-stats_main
+    &_main {
+      div {
+        margin-bottom: 15px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    //.details-stats_secondary
+    &_secondary {
+      margin-left: 20px;
+      @media (max-width: $md2) {
+        margin-left: 0;
+        margin-top: 40px;
+      }
+      div {
+        margin-bottom: 15px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+.border-countries {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  @media (max-width: $md3) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  //.border-countries_title
+  &_title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-right: 20px;
+  }
+  //.border-countries_values
+  &_values {
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: $md3) {
+      margin: 20px 0;
+    }
+    //.border-countries_values-item
+    &-item {
+      box-shadow: $shadow;
+      padding: 7px 20px;
+      font-size: 0.9rem;
+      border-radius: 0.3rem;
+      @include themed() {
+        background: t("primary");
+      }
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.selector {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $md3) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  // .selector_search
+  &_search {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    border-radius: 0.3rem;
+    height: 40px;
+    width: 30%;
+    @media (max-width: $md1) {
+      width: 40%;
+    }
+    @media (max-width: $md2) {
+      width: 50%;
+    }
+    @media (max-width: $md3) {
+      width: 100%;
+    }
+    box-shadow: $shadow;
+    @include themed() {
+      background: t("primary");
+    }
+    .fas {
+      @include themed() {
+        color: t("input");
+      }
+    }
+    input {
+      width: 80%;
+      margin-left: 10px;
+      font-weight: 300;
+      @include themed() {
+        color: t("input");
+      }
+      &::placeholder {
+        @include themed() {
+          color: t("input");
+        }
+      }
+    }
+  }
+  // .selector_filter
+  &_filter {
+    border-radius: 0.3rem;
+    cursor: pointer;
+    max-height: 40px;
+    box-shadow: $shadow;
+    width: 170px;
+    @media (max-width: $md3) {
+      margin-top: 20px;
+    }
+
+    @include themed() {
+      background: t("primary");
+    }
+
+    //.selector_filter_main
+    &_main {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 20px;
+      height: 20px;
+      align-items: center;
+      @include themed() {
+        color: t("text");
+      }
+      .fas {
+        margin-left: 10px;
+        font-size: 9px;
+        transition: transform 0.5s;
+      }
+      .active {
+        transform: rotateX(180deg);
+      }
+    }
+
+    //.selector_filter_dropdown
+    &_dropdown {
+      border-radius: 0.3rem;
+      overflow: hidden;
+      padding: 0 20px;
+      position: relative;
+      transition: max-height 0.5s linear;
+      top: 5px;
+      width: 100%;
+      max-height: 0;
+      @include themed() {
+        background: t("primary");
+      }
+      //.selector_filter_dropdown-item
+      &-item {
+        cursor: pointer;
+        &:hover {
+          opacity: 0.9;
+        }
+        @include themed() {
+          color: t("text");
+        }
+        margin-top: 10px;
+        &:last-child {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

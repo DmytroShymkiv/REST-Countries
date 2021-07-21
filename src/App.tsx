@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./style/style.css";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import useTypedSelector from "./redux/useTypedSelector";
+
+import Header from "./Components/Header/Header";
+import { MainPage } from "./Components/Pages/MainPage";
+import { CountryDetailsPage } from "./Components/Pages/CountryDetailsPage/CountryDetailsPage";
 
 function App() {
+  const mode = useTypedSelector((state) => state.app.mode);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`theme--${mode}`}>
+      <div className="wrapper">
+        <Header />
+        <div className="container">
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <MainPage />
+              </Route>
+              <Route exact path="/details/:name">
+                <CountryDetailsPage />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
+      </div>
     </div>
   );
 }
