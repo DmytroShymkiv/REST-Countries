@@ -1,6 +1,6 @@
 import "./style/style.css";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import useTypedSelector from "./redux/useTypedSelector";
 
 import Header from "./Components/Header/Header";
@@ -15,7 +15,7 @@ function App() {
       <div className="wrapper">
         <Header />
         <div className="container">
-          <Router>
+          <Router basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route exact path="/">
                 <MainPage />
